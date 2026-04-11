@@ -1,0 +1,30 @@
+/* ─── ScrollReveal base ─── */
+.sr {
+  opacity: 0;
+  transition:
+    opacity  0.65s cubic-bezier(0.4, 0, 0.2, 1) var(--sr-delay, 0ms),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1) var(--sr-delay, 0ms);
+}
+
+/* Direction variants */
+.sr--up    { transform: translateY(30px);  }
+.sr--down  { transform: translateY(-30px); }
+.sr--left  { transform: translateX(30px);  }
+.sr--right { transform: translateX(-30px); }
+.sr--scale { transform: scale(0.93);       }
+.sr--none  { transform: none;              }
+
+/* Visible state — class added by IntersectionObserver */
+.sr--visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .sr {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

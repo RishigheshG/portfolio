@@ -1,0 +1,98 @@
+/* =========================================================
+   CURSOR — Minimal Red Dot + Kinetic Trail
+   ========================================================= */
+
+/* ── Hide native cursor — applied globally, no media query wrapper ──
+   JS early-exits on touch devices so this only activates on pointer hardware  */
+html,
+html *,
+html *::before,
+html *::after {
+  cursor: none !important;
+}
+
+/* =========================================================
+   DOT  —  10×10 px, positioned so its centre = hotspot
+   ========================================================= */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: #d22b2f;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  /* JS drives transform via rAF — no CSS transition on it (would fight positioning) */
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* ── Hover state — box-shadow ring expands around the dot
+   NO transform here; JS still writes translate(…) for positioning ── */
+.cursor-dot.cursor-dot--hover {
+  background: #ff4444;
+  /* inner glow + outer ring — purely visual, no geometry change */
+  box-shadow:
+    0 0 0 5px rgba(210, 43, 47, 0.22),
+    0 0 18px rgba(210, 43, 47, 0.40);
+}
+
+/* =========================================================
+   KINETIC TRAIL  —  3 rings, fade on idle
+   ========================================================= */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  border: 1px solid transparent;
+  /* Smooth fade in/out when JS toggles opacity */
+  transition: opacity 0.35s ease;
+}
+
+/* Ring 1 — closest, most visible, red tint */
+.cursor-trail--1 {
+  z-index: 99995;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(210, 43, 47, 0.50);
+}
+
+/* Ring 2 */
+.cursor-trail--2 {
+  z-index: 99994;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(210, 43, 47, 0.30);
+}
+
+/* Ring 3 — furthest, barely visible */
+.cursor-trail--3 {
+  z-index: 99993;
+  width: 5px;
+  height: 5px;
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+/* =========================================================
+   MOBILE / TOUCH — restore system cursor + hide custom elements
+   ========================================================= */
+@media (hover: none) {
+  html,
+  html *,
+  html *::before,
+  html *::after {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-trail {
+    display: none !important;
+  }
+}
