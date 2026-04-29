@@ -91,6 +91,11 @@ export default function Home() {
                 roles in Germany.
               </p>
 
+              <a href="mailto:rishigheshg@gmail.com" className="home__hero-email">
+                <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>alternate_email</span>
+                rishigheshg@gmail.com
+              </a>
+
               <div className="home__hero-actions">
                 <Link to="/projects" className="btn-primary-hero">
                   View Projects
@@ -110,6 +115,14 @@ export default function Home() {
                   className="btn-ghost"
                 >
                   GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/rishigheshg/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost"
+                >
+                  LinkedIn
                 </a>
               </div>
             </div>
