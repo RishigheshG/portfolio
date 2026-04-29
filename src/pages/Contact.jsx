@@ -6,7 +6,7 @@ import './Contact.css'
 // To enable email submission, create a free account at https://formspree.io
 // then replace YOUR_FORM_ID below with your form's ID (e.g. "xpzgkdvw")
 // ─────────────────────────────────────────────
-const FORMSPREE_ID = 'YOUR_FORM_ID'
+const FORMSPREE_ID = 'xnjlerzj'
 
 const INITIAL = { name: '', email: '', subject: 'project', message: '' }
 

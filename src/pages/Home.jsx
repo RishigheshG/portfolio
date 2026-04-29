@@ -4,19 +4,37 @@ import heroCharacter from '../assets/hero-character.png'
 import ScrollReveal from '../components/ScrollReveal'
 import './Home.css'
 
-const tools = [
-  { icon: 'terminal',                label: 'Python'       },
-  { icon: 'psychology',              label: 'PyTorch'      },
-  { icon: 'model_training',          label: 'Scikit-learn' },
-  { icon: 'hub',                     label: 'LangChain'    },
-  { icon: 'database',                label: 'SQL / Pandas' },
-  { icon: 'cloud',                   label: 'AWS / GCP'    },
-  { icon: 'api',                     label: 'FastAPI'      },
-  { icon: 'view_kanban',             label: 'Docker'       },
-  { icon: 'bar_chart',               label: 'Power BI'     },
-  { icon: 'smart_toy',               label: 'OpenAI API'   },
-  { icon: 'precision_manufacturing', label: 'TensorFlow'   },
-  { icon: 'stream',                  label: 'Streamlit'    },
+const skillCategories = [
+  {
+    label: 'Machine Learning & AI',
+    icon: 'psychology',
+    skills: ['Scikit-learn', 'NumPy', 'Pandas', 'SciPy', 'XGBoost', 'Statsmodels'],
+  },
+  {
+    label: 'Deep Learning',
+    icon: 'model_training',
+    skills: ['PyTorch', 'TensorFlow', 'Keras', 'YOLO', 'Hugging Face', 'Transformers'],
+  },
+  {
+    label: 'LLM / Agent Systems',
+    icon: 'hub',
+    skills: ['LangChain', 'LangGraph', 'OpenAI API', 'n8n', 'Prompt Engineering', 'RAG'],
+  },
+  {
+    label: 'Backend & APIs',
+    icon: 'api',
+    skills: ['FastAPI', 'Docker', 'REST APIs', 'Supabase', 'PostgreSQL', 'Redis'],
+  },
+  {
+    label: 'Data Engineering',
+    icon: 'database',
+    skills: ['SQL', 'Pandas', 'NumPy', 'AWS S3', 'GCP', 'ETL Pipelines'],
+  },
+  {
+    label: 'Visualization & Analytics',
+    icon: 'bar_chart',
+    skills: ['Power BI', 'Streamlit', 'Matplotlib', 'Seaborn', 'Plotly', 'Tableau'],
+  },
 ]
 
 export default function Home() {
@@ -42,28 +60,49 @@ export default function Home() {
                   <div className="home__status-ping" />
                   <div className="home__status-dot" />
                 </div>
-                <span className="home__status-text">Open to opportunities — Germany</span>
+                <span className="home__status-text">Open to AI/ML roles — Germany</span>
               </div>
 
-              <p className="home__signal-label">AI / ML ENGINEER</p>
+              <p className="home__signal-label">Data Science &amp; AI Engineering</p>
               <h1 className="home__hero-title">
                 Rishighesh<span className="home__title-dot">.</span>
               </h1>
               <h2 className="home__hero-subtitle">AI/ML Engineer &amp; Data Scientist</h2>
+
+              {/* Institution credibility line */}
+              <p className="home__hero-institution">
+                M.Sc. Data Science &mdash; FAU Erlangen-Nürnberg &nbsp;·&nbsp; B.Tech CS &mdash; VIT Chennai
+              </p>
+
+              {/* Specialization tags */}
+              <div className="home__hero-specs">
+                <span className="home__hero-spec">ML Systems</span>
+                <span className="home__hero-spec-dot">·</span>
+                <span className="home__hero-spec">LLM Applications</span>
+                <span className="home__hero-spec-dot">·</span>
+                <span className="home__hero-spec">Intelligent Agents</span>
+                <span className="home__hero-spec-dot">·</span>
+                <span className="home__hero-spec">End-to-End AI</span>
+              </div>
+
               <p className="home__hero-body">
                 Building <strong>production-grade ML systems</strong>, intelligent agents,
-                and end-to-end AI pipelines. Currently pursuing a{' '}
-                <strong>Master's in Data Science at FAU Erlangen</strong>.
-                Open to AI/ML and Working Student roles in Germany.
+                and end-to-end AI pipelines. Available for AI/ML and Working Student
+                roles in Germany.
               </p>
+
               <div className="home__hero-actions">
                 <Link to="/projects" className="btn-primary-hero">
                   View Projects
                   <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
                 </Link>
-                <Link to="/resume" className="btn-secondary-hero">
-                  Resume
-                </Link>
+                <a
+                  href="/resume.pdf"
+                  download="Rishighesh_Gandhavadi_Resume.pdf"
+                  className="btn-secondary-hero"
+                >
+                  Download Resume
+                </a>
                 <a
                   href="https://github.com/RishigheshG"
                   target="_blank"
@@ -186,30 +225,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 02 Tooling ─── */}
+      {/* ─── 02 Skills — Grouped Categories ─── */}
       <section className="home__tooling">
         <div className="home__section-inner">
           <ScrollReveal direction="up">
             <div className="home__tooling-header">
               <div>
-                <p className="home__index-label">02 — TOOLING</p>
+                <p className="home__index-label">02 — SKILLS</p>
                 <h3 className="home__section-title">
                   The Engineer's <span className="home__title-italic">Stack.</span>
                 </h3>
               </div>
               <p className="home__tooling-desc">
-                My production stack — tools I've shipped real systems with,
-                not just listed on a resume.
+                Tools I've shipped real systems with —
+                grouped by what they actually do.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={100}>
-            <div className="home__tools-grid">
-              {tools.map(({ icon, label }) => (
-                <div key={label} className="home__tool-cell">
-                  <span className="material-symbols-outlined home__tool-icon">{icon}</span>
-                  <span className="home__tool-label">{label}</span>
+            <div className="home__skills-grid">
+              {skillCategories.map(({ label, icon, skills }) => (
+                <div key={label} className="home__skill-category">
+                  <div className="home__skill-category-header">
+                    <span className="material-symbols-outlined home__skill-category-icon">{icon}</span>
+                    <span className="home__skill-category-label">{label}</span>
+                  </div>
+                  <div className="home__skill-tags">
+                    {skills.map(s => (
+                      <span key={s} className="home__skill-tag">{s}</span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -240,8 +286,9 @@ export default function Home() {
                     <p className="home__timeline-company">FAU Erlangen-Nürnberg</p>
                     <p className="home__timeline-desc">
                       Graduate research in machine learning, deep learning, NLP, and
-                      statistical learning theory. Building thesis-level AI systems with
-                      production-grade engineering practices.
+                      statistical learning theory. Building production-grade AI systems
+                      as part of thesis-level work. Coursework spanning advanced ML,
+                      computer vision, and agentic AI systems.
                     </p>
                   </div>
                 </ScrollReveal>
@@ -277,7 +324,7 @@ export default function Home() {
                     "The best ML system isn't the one with the most parameters —
                     it's the one that solves a real problem reliably, at scale."
                   </p>
-                  <p className="home__quote-attr">— ENGINEERING PHILOSOPHY</p>
+                  <p className="home__quote-attr">— Engineering Philosophy</p>
                 </div>
               </div>
             </ScrollReveal>
