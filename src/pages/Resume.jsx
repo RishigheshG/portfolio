@@ -5,14 +5,16 @@ import './Resume.css'
 const FILL = { fontVariationSettings: "'FILL' 1" }
 
 const techStack = [
-  'TypeScript','React & Next.js','Node.js','Python',
-  'PostgreSQL','AWS Cloud','Docker','Tailwind CSS','Figma',
+  'Python', 'PyTorch', 'TensorFlow', 'Scikit-learn',
+  'Pandas', 'NumPy', 'SQL', 'FastAPI', 'Docker',
+  'LangChain', 'LangGraph', 'OpenAI API', 'n8n',
+  'Streamlit', 'Power BI', 'AWS', 'GCP', 'Supabase',
+  'YOLO', 'Hugging Face', 'Git',
 ]
 
 const certifications = [
-  { name: 'AWS Solutions Architect Pro',    issuer: 'Amazon Web Services', year: '2023' },
-  { name: 'Google UX Design Certificate',   issuer: 'Google',              year: '2022' },
-  { name: 'Certified Kubernetes Admin',     issuer: 'CNCF',                year: '2021' },
+  { name: 'Deep Learning Specialization',      issuer: 'Coursera / Andrew Ng',  year: '2023' },
+  { name: 'Machine Learning Specialization',   issuer: 'Coursera / Stanford',   year: '2022' },
 ]
 
 export default function Resume() {
@@ -33,14 +35,24 @@ export default function Resume() {
             </div>
             <div className="cv__header-right">
               <div className="cv__icon-row">
-                <div className="cv__icon-btn"><span className="material-symbols-outlined">mail</span></div>
-                <div className="cv__icon-btn"><span className="material-symbols-outlined">location_on</span></div>
-                <div className="cv__icon-btn"><span className="material-symbols-outlined">link</span></div>
+                <a href="mailto:rishigheshg@gmail.com" className="cv__icon-btn" aria-label="Email">
+                  <span className="material-symbols-outlined">mail</span>
+                </a>
+                <div className="cv__icon-btn" aria-label="Location">
+                  <span className="material-symbols-outlined">location_on</span>
+                </div>
+                <a href="https://www.linkedin.com/in/rishigheshg/" target="_blank" rel="noopener noreferrer" className="cv__icon-btn" aria-label="LinkedIn">
+                  <span className="material-symbols-outlined">link</span>
+                </a>
               </div>
-              <button className="cv__download-btn">
+              <a
+                href="/resume.pdf"
+                download="Rishighesh_Gandhavadi_Resume.pdf"
+                className="cv__download-btn"
+              >
                 <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>download</span>
                 DOWNLOAD PDF
-              </button>
+              </a>
             </div>
           </header>
         </ScrollReveal>
@@ -51,12 +63,12 @@ export default function Resume() {
           {/* Left col */}
           <div className="cv__left">
 
-            {/* Experience */}
+            {/* Experience / Background */}
             <ScrollReveal direction="up" delay={50}>
               <section className="cv__section">
                 <div className="cv__section-heading">
                   <span className="material-symbols-outlined cv__section-icon" style={FILL}>work</span>
-                  <h2 className="cv__section-title">Experience</h2>
+                  <h2 className="cv__section-title">Background</h2>
                 </div>
                 <div className="cv__timeline">
 
@@ -64,15 +76,16 @@ export default function Resume() {
                     <div className="cv__tl-dot cv__tl-dot--active" />
                     <div className="cv__tl-header">
                       <div>
-                        <h3 className="cv__tl-role">Senior Kinetic Engineer</h3>
-                        <p className="cv__tl-company">TechFlow Solutions</p>
+                        <h3 className="cv__tl-role">M.Sc. Data Science</h3>
+                        <p className="cv__tl-company">FAU Erlangen-Nürnberg</p>
                       </div>
-                      <span className="cv__tl-period">2021 — Present</span>
+                      <span className="cv__tl-period">2024 — Present</span>
                     </div>
                     <p className="cv__tl-desc">
-                      Pioneered the development of responsive mechanical interfaces and adaptive system
-                      architectures. Led a cross-functional team of 12 to deploy enterprise-grade
-                      automation pipelines reducing latency by 40%.
+                      Graduate research in machine learning, deep learning, NLP, and statistical
+                      learning theory. Building thesis-level AI systems with production-grade
+                      engineering practices. Coursework spanning advanced ML, computer vision,
+                      and agentic AI systems.
                     </p>
                   </div>
 
@@ -80,15 +93,15 @@ export default function Resume() {
                     <div className="cv__tl-dot" />
                     <div className="cv__tl-header">
                       <div>
-                        <h3 className="cv__tl-role">Systems Architect</h3>
-                        <p className="cv__tl-company">Quantum Dynamics</p>
+                        <h3 className="cv__tl-role">AI Engineer — Independent Projects</h3>
+                        <p className="cv__tl-company">Self-directed</p>
                       </div>
-                      <span className="cv__tl-period">2018 — 2021</span>
+                      <span className="cv__tl-period">2023 — 2024</span>
                     </div>
                     <p className="cv__tl-desc">
-                      Orchestrated global infrastructure migrations for Fortune 500 clients. Specialized
-                      in high-availability clusters and secure data fabric integration across hybrid cloud
-                      environments.
+                      Designed and shipped 5+ end-to-end ML systems: classification pipelines,
+                      recommendation engines, LLM agents, and agentic workflow automation using
+                      LangChain, n8n, and OpenAI APIs. Each project built with production intent.
                     </p>
                   </div>
 
@@ -96,14 +109,15 @@ export default function Resume() {
                     <div className="cv__tl-dot" />
                     <div className="cv__tl-header">
                       <div>
-                        <h3 className="cv__tl-role">Junior Developer</h3>
-                        <p className="cv__tl-company">Foundry Labs</p>
+                        <h3 className="cv__tl-role">B.Tech Computer Science &amp; Engineering</h3>
+                        <p className="cv__tl-company">VIT Chennai</p>
                       </div>
-                      <span className="cv__tl-period">2016 — 2018</span>
+                      <span className="cv__tl-period">2020 — 2024</span>
                     </div>
                     <p className="cv__tl-desc">
-                      Developed core modules for real-time data visualization tools. Collaborated with UI
-                      designers to implement pixel-perfect Material Design interfaces.
+                      4-year CS degree with focus on AI/ML and software engineering.
+                      Strong foundation in algorithms, data structures, and applied machine
+                      learning. Active in research projects and competitive programming.
                     </p>
                   </div>
 
@@ -120,14 +134,14 @@ export default function Resume() {
                 </div>
                 <div className="cv__edu-grid">
                   <div className="cv__edu-card">
-                    <h3 className="cv__edu-degree">M.S. in Robotics Engineering</h3>
-                    <p className="cv__edu-school">Global Institute of Technology</p>
-                    <p className="cv__edu-year">Graduated 2016</p>
+                    <h3 className="cv__edu-degree">M.Sc. Data Science</h3>
+                    <p className="cv__edu-school">FAU Erlangen-Nürnberg</p>
+                    <p className="cv__edu-year">Expected 2026</p>
                   </div>
                   <div className="cv__edu-card">
-                    <h3 className="cv__edu-degree">B.E. in Computer Science</h3>
-                    <p className="cv__edu-school">State Technical University</p>
-                    <p className="cv__edu-year">Graduated 2014</p>
+                    <h3 className="cv__edu-degree">B.Tech Computer Science</h3>
+                    <p className="cv__edu-school">VIT Chennai</p>
+                    <p className="cv__edu-year">Graduated 2024</p>
                   </div>
                 </div>
               </section>
@@ -151,8 +165,7 @@ export default function Resume() {
                   ))}
                 </div>
                 <div className="cv__stack-note">
-                  Expertise in building scalable systems with a focus on motion design and reactive
-                  user experiences.
+                  Focused on AI/ML engineering, LLM systems, and end-to-end data-driven products.
                 </div>
               </section>
             </ScrollReveal>
@@ -183,13 +196,13 @@ export default function Resume() {
               <div className="cv__meta-card">
                 <img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj7AGI159Rfyg4Wlx1LSczYHrSK_5ac407YJJeWvEJYDBRVy1IQLihG54Hk0wwaAZpPenzmjowAKOKyekZyjD0bhF0qbZDSckf8ubAxWpeD2R3gTfKFafMwHEGo6fTXts28uVNT4bsWNbrlUlh5wRPvzBkfsXbnmsW4_66raJY3_dWonC9FJnygj-GSW2qjwz2fQ8pghm2ryGQswA6ti5C3mz1Gp97vjNQfUKST5J9WQZFkz-fhvHO9lSOX423AtKp3Eqi1GzxzwA4"
-                  alt="Professional portrait"
+                  alt="Rishighesh Gandhavadi"
                   className="cv__meta-img"
                 />
                 <div className="cv__meta-overlay" />
                 <div className="cv__meta-text">
-                  <p className="cv__meta-cta">Work with me</p>
-                  <p className="cv__meta-location">Based in Bangalore, IN</p>
+                  <p className="cv__meta-cta">Open to AI/ML &amp; Working Student Roles</p>
+                  <p className="cv__meta-location">Erlangen, Germany</p>
                 </div>
               </div>
             </ScrollReveal>

@@ -111,7 +111,7 @@ export default function Navbar() {
           </nav>
 
           {/* Footer hint */}
-          <p className="mob-menu-hint">Precision Motion © 2025</p>
+          <p className="mob-menu-hint">Rishighesh Gandhavadi © 2025</p>
         </div>
       </div>
     </>

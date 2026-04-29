@@ -60,11 +60,11 @@ export default function Contact() {
         <ScrollReveal direction="up">
           <div className="contact-header">
             <h1 className="contact-title">
-              Let's <span className="contact-title-accent">Build</span> the Future
+              Let's <span className="contact-title-accent">Work</span> Together
             </h1>
             <p className="contact-subtitle">
-              Whether it's an architectural challenge, a system optimization, or a visionary
-              collaboration, I'm ready to engineer the next kinetic leap.
+              Open to AI/ML engineering roles, working student positions, and research
+              collaborations in Germany. I respond within 24 hours.
             </p>
           </div>
         </ScrollReveal>
@@ -76,9 +76,9 @@ export default function Contact() {
           <ScrollReveal direction="up" delay={60}>
             <div className="contact-form-card">
               <div className="contact-form-heading">
-                <h2 className="contact-form-title">Transmission Protocol</h2>
+                <h2 className="contact-form-title">Send a Message</h2>
                 <p className="contact-form-sub">
-                  Send your project specs or inquiries directly to my core node.
+                  For role inquiries, project collaborations, or just to connect.
                 </p>
               </div>
 
@@ -88,9 +88,9 @@ export default function Contact() {
                   <div className="contact-success-icon">
                     <span className="material-symbols-outlined">check_circle</span>
                   </div>
-                  <h3 className="contact-success-title">Transmission Received</h3>
+                  <h3 className="contact-success-title">Message Received</h3>
                   <p className="contact-success-body">
-                    Your message has been locked in. I'll respond within 24–48 hours.
+                    Thanks for reaching out. I'll respond within 24 hours.
                   </p>
                   <button
                     className="contact-submit"
@@ -124,8 +124,9 @@ export default function Contact() {
                       <select id="c-subject" name="subject"
                         className="contact-input contact-select"
                         value={formData.subject} onChange={handleChange}>
+                        <option value="working-student">Working Student / Internship Inquiry</option>
+                         <option value="fulltime">Full-time Role Inquiry</option>
                         <option value="project">Project Collaboration</option>
-                        <option value="consulting">Engineering Consulting</option>
                         <option value="other">General Inquiry</option>
                       </select>
                       <span className="material-symbols-outlined contact-select-icon">expand_more</span>
@@ -133,9 +134,9 @@ export default function Contact() {
                   </div>
 
                   <div className="contact-field">
-                    <label className="contact-label" htmlFor="c-message">Transmission Details</label>
+                    <label className="contact-label" htmlFor="c-message">Message</label>
                     <textarea id="c-message" name="message" rows="6"
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about the role or project you have in mind..."
                       className="contact-input contact-textarea"
                       value={formData.message} onChange={handleChange} required />
                   </div>
@@ -151,7 +152,7 @@ export default function Contact() {
                     className="contact-submit"
                     disabled={status === 'loading'}
                   >
-                    {status === 'loading' ? 'Sending…' : 'Send Data'}
+                    {status === 'loading' ? 'Sending…' : 'Send Message'}
                     <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>
                       {status === 'loading' ? 'hourglass_top' : 'send'}
                     </span>
@@ -181,7 +182,7 @@ export default function Contact() {
                       <span className="material-symbols-outlined">alternate_email</span>
                     </div>
                     <div>
-                      <p className="contact-info-label">Digital Contact</p>
+                      <p className="contact-info-label">Email</p>
                       <p className="contact-info-value">rishigheshg@gmail.com</p>
                     </div>
                   </div>
@@ -190,8 +191,17 @@ export default function Contact() {
                       <span className="material-symbols-outlined">location_on</span>
                     </div>
                     <div>
-                      <p className="contact-info-label">Location Node</p>
-                      <p className="contact-info-value">Bangalore, IN / Remote</p>
+                      <p className="contact-info-label">Location</p>
+                      <p className="contact-info-value">Erlangen, Germany</p>
+                    </div>
+                  </div>
+                  <div className="contact-info-row">
+                    <div className="contact-info-icon">
+                      <span className="material-symbols-outlined">work</span>
+                    </div>
+                    <div>
+                      <p className="contact-info-label">Availability</p>
+                      <p className="contact-info-value">Open to Working Student &amp; AI/ML Roles</p>
                     </div>
                   </div>
                 </div>
@@ -242,7 +252,7 @@ export default function Contact() {
                     <div className="contact-ping" />
                     <div className="contact-ping-dot" />
                   </div>
-                  <span className="contact-status-text">Systems Active</span>
+                  <span className="contact-status-text">Available for Opportunities</span>
                 </div>
               </div>
             </ScrollReveal>
